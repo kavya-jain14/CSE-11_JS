@@ -11,3 +11,4 @@ else
 {
     console.log("false");
 }
+//Array is a special type of object
