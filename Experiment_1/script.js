@@ -1,36 +1,37 @@
-function calculateResult() {
-    const n=document.getElementById("subjects").value;
-    let total=0;
-    let i;
-    for(i=1;i<=n;i++){
-let x=parseFloat(prompt("Enter the Subject Number " + (i)));   
-total+=x;
-    }
-    
-    let avg=total/n;
-
-    let grade;
-    if(avg>=90){
-        grade="A";
-    }  
-     else if(avg>=80){
-        grade="B";
-    }
-     else if(avg>=70){
-        grade="C";
-    }
-     else if(avg>=60){
-        grade="D";
-    }
-     else{
-        grade="F";
-    }
-    let r;
-    
-    if (avg>40)
-        r="Pass";
-    else
-        r="Fail";
-
-    let result=document.getElementById("result").innerHTML=" Total marks "+total+"<br/>"+" Average marks "+avg+"<br/>"+" Grade "+grade+"<br/>"+" Result "+r;
+function calculateResult(){
+let n = document.getElementById("subjects").value;
+let total = 0;
+for(let i=1;i<=n;i++){
+let marks = parseFloat(prompt("Enter marks for Subject " + i));
+total = total + marks;
 }
+let average = total / n;
+let grade;
+ let result;
+ if(average >= 90){
+ grade = "A+";
+ }
+ else if(average >= 75){
+ grade = "A";
+ }
+ else if(average >= 60){
+ grade = "B";
+ }
+ else if(average >= 50){
+ grade = "C";
+ }
+ else{
+ grade = "F";
+ }
+ if(average >= 40){
+ result = "PASS";
+ }
+ else{
+ result = "FAIL";
+ }
+ document.getElementById("result").innerHTML =
+ "Total Marks: " + total + "<br>" +
+ "Average Marks: " + average.toFixed(2) + "<br>" +
+ "Grade: " + grade + "<br>" +
+ "Result: " + result;
+ }
